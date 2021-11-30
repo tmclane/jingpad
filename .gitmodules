@@ -1,0 +1,3 @@
+[submodule "key-mapper"]
+	path = key-mapper
+	url = git@github.com:tmclane/key-mapper.git
