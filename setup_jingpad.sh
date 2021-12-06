@@ -19,6 +19,8 @@ sudo apt install -y ./dist/key-mapper-1.2.1.deb
 sudo sed -i -e "s/USER/$(whoami)/g" /etc/xdg/autostart/key-mapper-autoload.desktop
 sudo systemctl enable key-mapper
 sudo systemctl restart key-mapper
+# Copy script to reapply keymapping every wakeup
+sudo cp 99_jingpad_wakeup /usr/lib/pm-utils/sleep.d
 
 # activate the mapping now so we don't have to wait for a reboot
 key-mapper-control --command autoload --config-dir /home/$(whoami)/.config/key-mapper
@@ -30,3 +32,4 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --receive-keys F6BC817356A3D45
 echo "deb http://ppa.launchpad.net/longsleep/golang-backports/ubuntu focal main\ndeb-src http://ppa.launchpad.net/longsleep/golang-backports/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/golang.list
 sudo apt update
 sudo apt install -y golang-go
+

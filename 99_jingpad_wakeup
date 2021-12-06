@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# /etc/pm/sleep.d/99_jingpad_wakeup
+# Action script to reapply configuration on wakeup.
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+
+case "$1" in
+	suspend|hibernate)
+		key-mapper-control --command stop-all
+		;;
+	resume|thaw)
+		key-mapper-control --command autoload --config-dir /home/tmclane/.config/key-mapper
+		;;
+esac
+
+exit 0
