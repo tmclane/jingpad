@@ -1,11 +1,12 @@
 #!/bin/bash
 
+
 sudo apt update
-sudo apt install -y openssh-server wget curl git emacs \
+sudo apt install -y openssh-server wget curl emacs \
      cairo-dev python3-cairo-dev \
      libcairo2-dev python3-dev \
      python3-key-mapper python-pip3 \
-     python3-setuptools gettext
+     python3-setuptools gettext gunzip
 
 # Enable automatic key mapping
 # Copy over the mapping preset(s)
