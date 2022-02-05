@@ -11,5 +11,4 @@ Once git is installed you can clone the repository and then update the submodule
     cd jingpad
     git submodule update --init
 
-Then you can enter the `jingpad` directory and run the `setup_jingpad.sh`script after
- checking to ensure  it doesn't do anything you do not want it to do.
+Then you can run the `setup_jingpad.sh` script after checking to ensure it doesn't do anything you do not want it to do.
